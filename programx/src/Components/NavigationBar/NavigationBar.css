@@ -1,0 +1,10 @@
+.navList{
+  font-size: 15pt;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  border-top: 5px solid #db7c0f;
+  border-bottom: 5px solid #34c42f;
+}

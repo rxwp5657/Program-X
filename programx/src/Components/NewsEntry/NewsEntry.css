@@ -1,0 +1,32 @@
+.newsEntry{
+  border-left: 10px solid #34c42f;
+  border-radius: 10px;
+  float: center;
+  display: block;
+  background-color: #fcbe6c;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+.newsEntryH1{
+  margin-left: 10px;
+}
+
+.newsEntryAuthor{
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.newsEntryDate{
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.newsEntryBody{
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+.newsEntry:hover{
+  cursor: pointer;
+}

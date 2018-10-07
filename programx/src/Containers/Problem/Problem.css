@@ -1,0 +1,29 @@
+.problem{
+  background-image: url('dark-triangles.png');
+  
+}
+
+.problemHeader1{
+  font-size: 50pt;
+  color: #db7c0f;
+  margin-left: 20px;
+}
+
+.problemHeader2{
+  font-size: 30pt;
+  color: #34c42f;
+  margin-left: 20px;
+}
+
+.description{
+  font-size: 15pt;
+  color: white;
+  margin-left: 20px;
+  margin-right: 50px;
+  text-align: justify;
+  line-height: 2;
+}
+
+.code{
+  margin-left: 20pt;
+}

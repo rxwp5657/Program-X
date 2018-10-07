@@ -1,0 +1,25 @@
+.problemBox{
+  border-style: solid;
+  border-radius: 20px;
+  border-color: #db7c0f;
+  float: center;
+  margin-top: 30px;
+  margin-left: 10px;
+  color: white;
+  display: block;
+}
+
+.problemH1{
+  margin-left: 10px;
+}
+
+.problemDif{
+  margin-left: 10px;
+}
+
+.problemScore{
+  margin-left: 10px;
+}
+.problemBox:hover{
+  cursor: pointer;
+}

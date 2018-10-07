@@ -1,0 +1,12 @@
+.Header{
+  display: flex;
+  justify-content: center;
+  color: #34c42f;
+  font-size: 30pt;
+  background-image: url('./dark-triangles.png');
+}
+
+.second{
+  color: #db7c0f;
+  background-image: url('./dark-triangles.png');
+}
