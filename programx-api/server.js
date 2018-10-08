@@ -1,7 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const knex = require('knex');
+const bodyParser = require('body-parser');
 const app = express();
+
+
 
 db = knex({
   client: 'pg',
@@ -14,6 +17,7 @@ db = knex({
 });
 
 app.use(cors());
+app.use(bodyParser.json());
 
 app.get('/exercises', (req, res) => {
   db.select('*').from('exercises').then(data => {
@@ -35,6 +39,7 @@ app.get('/problem/:id', (req, res) => {
   });
 });
 
-app.listen(3500, ()=> {
+
+app.listen(3500, () => {
   console.log("server is running on port 3500");
 });

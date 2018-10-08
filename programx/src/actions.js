@@ -8,6 +8,12 @@ import News from './Containers/News/News.js';
 import {START_PROBLEM_PAGE ,
         START_EXERCISES_PAGE,
         START_NEWS_PAGE,
+        SEND_CODE_PENDING,
+        SEND_CODE_SUCCES,
+        SEND_CODE_FAILED,
+        SEND_FILE_PENDING,
+        SEND_FILE_SUCCES,
+        SEND_FILE_FAILED,
         REQUEST_EXERCISES_PENDING,
         REQUEST_EXERCISES_SUCCES,
         REQUEST_EXERCISES_FAILED,
@@ -38,6 +44,28 @@ export const goToExercises = () => ({
 export const goToNews = () => ({
     type: START_NEWS_PAGE,
     payload: <News />
+});
+
+//  action triggered when send code is pushed.
+
+export const sendCode = (code,id) => (dispatch) => {
+  dispatch({type: SEND_CODE_PENDING});
+  fetch('http://localhost:4000/code', {
+    method: 'post',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      id: id,
+      code: code,
+    })
+  }).then(response => response.json())
+    .then(data => dispatch({type: SEND_CODE_SUCCES, payload: data}))
+    .catch(error => dispatch({type:SEND_FILE_FAILED , payload: error}))
+}
+
+
+export const sendFile = (file) => ({
+  type: SEND_FILE_PENDING,
+  payload: file,
 });
 
 // action triggered when the "exercises" Container is mounted.

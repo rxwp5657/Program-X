@@ -8,6 +8,12 @@ import News from './Containers/News/News.js';
 import {START_PROBLEM_PAGE ,
         START_EXERCISES_PAGE,
         START_NEWS_PAGE,
+        SEND_CODE_PENDING,
+        SEND_CODE_SUCCES,
+        SEND_CODE_FAILED,
+        SEND_FILE_PENDING,
+        SEND_FILE_SUCCES,
+        SEND_FILE_FAILED,
         REQUEST_EXERCISES_PENDING,
         REQUEST_EXERCISES_SUCCES,
         REQUEST_EXERCISES_FAILED,
@@ -37,6 +43,32 @@ export const changePage = (state = initialStatePage, action = {}) => {
       break;
     case START_NEWS_PAGE:
       return Object.assign({}, state, {page: action.payload});
+      break;
+    default:
+      return state;
+  }
+}
+
+// default state of the code
+
+const initialStateCode = {
+  isPending: false,
+  result: '',
+  error: ''
+}
+
+// handle sendCode action
+
+export const sendCode = (state = initialStateCode ,action = {}) =>{
+  switch (action.type) {
+    case SEND_CODE_PENDING:
+      return Object.assign({}, state, {isPending: true});
+      break;
+    case SEND_CODE_SUCCES:
+      return Object.assign({}, state, {isPending: false, result: action.payload});
+      break;
+    case SEND_CODE_FAILED:
+      return Object.assign({}, state, {isPending: false, error: action.payload});
       break;
     default:
       return state;
